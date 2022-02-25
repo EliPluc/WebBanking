@@ -1,0 +1,26 @@
+#Simulator{color:#FF8000;text-align:center}
+
+.container2{color:#FF8000;font-weight:bold;text-align:center}
+
+.container3{color:#FF8000;font-weight:bold;
+			text-align:center}
+.container4{color:#FF8000;font-weight:light;
+			text-align:center}
+
+#erstesh1{color:#FF8000;text-align:center}
+
+.container1 {
+	display:flex;
+	flex-direction:row;
+	gap: 10px;
+	justify-content:center;
+}
+
+body{background-color:#E6E6E6}
+
+.container-grid{
+	display:grid;
+	grid-template-rows: 270px 270px;
+	grid-template-columns: 480px 480px 480px;
+	gap: 15px;
+}
