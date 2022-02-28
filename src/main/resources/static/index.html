@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<script defer src ="javascript/js.js" type= "module" type="text/javascript"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
@@ -46,14 +46,15 @@ else
 
 		<div id="ausgabeSingle">
 			<p class="container2">Neue Zahlung erfassen</p>
-			<p class="container2">Empfänger <input type="text" size="25" /></p>
-			<p class="container2">IBAN <input type="text" size="25" /></p>
-			<p class="container2">BIC <input type="text" size="25" /></p>
-			<p class="container2">Betrag <input type="text" size="25" /></p>
-			<p class="container2">Währung <input type="text" size="10" /></p>
-			<p class="container2">Verwendungszweck <input type="text" size="25" /></p>
+			<p class="container2">Empfänger <input id="empf" type="text" size="25" /></p>
+			<p class="container2">IBAN <input id="iban" type="text" size="25" /></p>
+			<p class="container2">BIC <input id="bic" type="text" size="25" /></p>
+			<p class="container2">Betrag <input id="betr" type="text" size="25" /></p>
+			<p class="container2">Währung <input id="waehr" type="text" size="10" /></p>
+			<p class="container2">Verwendungszweck <input id ="verwend" type="text" size="25" /></p>
 			<p class="container2"><input type="reset" value="Eingabe zurücksetzen" /><br /></p>
-			<p class="container2">Rechnung hochladen <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
+			<button class="container2" id="senden" type="button" >Senden</button>
+			<p class="container2"><p class="container2">Rechnung hochladen <input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
 			<input type="file" /></p>
 			<!-- über Input wird der "Hochladen-Button" gesetzt -->
 			
