@@ -1,4 +1,5 @@
 document.getElementById("senden").addEventListener("click",post);
+document.getElementById("reset").addEventListener("click",reset);
 function post (){
 	var input ={
 		empfaenger: document.getElementById("empf").value,
@@ -18,5 +19,20 @@ function post (){
 		}
 	).then(alert("Vielen Dank, Ihr Eintrag war erfolgreich"))
 		}
+		
+		
+		function reset(){
+			
+	
+		document.getElementById("empf").value ="";
+		document.getElementById("iban").value ="";
+		document.getElementById("bic").value ="";
+		document.getElementById("betr").value ="";
+		document.getElementById("waehr").value ="";
+		document.getElementById("verwend").value ="";
+		
+	}
+	
+
 	
 

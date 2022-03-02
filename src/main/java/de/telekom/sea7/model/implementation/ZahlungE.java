@@ -12,6 +12,7 @@ public class ZahlungE {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@Column(name="empfaenger")
 	private String empfaenger;
 	@Column(name="empfaengerIBAN")
@@ -25,63 +26,51 @@ public class ZahlungE {
 	@Column(name="verwendungszweck")
 	private String verwendungszweck;
 	
-	public ZahlungE() {
-		
-	}
-
+	public ZahlungE() {}
+	
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public String getEmpfaenger() {
 		return empfaenger;
 	}
-
 	public void setEmpfaenger(String empfaenger) {
 		this.empfaenger = empfaenger;
 	}
-
 	public String getEmpfaengerIBAN() {
 		return empfaengerIBAN;
 	}
-
 	public void setEmpfaengerIBAN(String empfaengerIBAN) {
 		this.empfaengerIBAN = empfaengerIBAN;
 	}
-
 	public String getEmpfaengerBIC() {
 		return empfaengerBIC;
 	}
-
 	public void setEmpfaengerBIC(String empfaengerBIC) {
 		this.empfaengerBIC = empfaengerBIC;
 	}
-
 	public double getBetrag() {
 		return betrag;
 	}
-
 	public void setBetrag(double betrag) {
 		this.betrag = betrag;
 	}
-
 	public String getWaehrung() {
 		return waehrung;
 	}
-
 	public void setWaehrung(String waehrung) {
 		this.waehrung = waehrung;
 	}
-
 	public String getVerwendungszweck() {
 		return verwendungszweck;
 	}
-
 	public void setVerwendungszweck(String verwendungszweck) {
 		this.verwendungszweck = verwendungszweck;
 	}
-}
+	
+	
+		}
+
