@@ -1,50 +1,46 @@
 package de.telekom.sea7.view;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.server.ResponseStatusException;
 
 import de.telekom.sea7.model.implementation.ZahlungE;
 import de.telekom.sea7.model.implementation.ZahlungenRepository;
 
-
-
 @Controller
 public class ZahlungenController {
+
+	@Autowired
+	ZahlungenRepository zahlungen;
+
+	@GetMapping("/zahlungenDB")
+	@ResponseBody
+	public List<ZahlungE> getAll(){
+		List<ZahlungE> zahlungsliste = zahlungen.findAll();
+		return zahlungsliste;
+	}
 	
-@Autowired
-ZahlungenRepository zahlungen;
+	@GetMapping("/zahlungDB/{id}")
+	@ResponseBody
+	public Optional<ZahlungE> getZahlungE(@PathVariable(name = "id")Long id) {
 
-@GetMapping("/zahlungenDB")
-public String getZahlungE(Model model,
+		Optional<ZahlungE> zahlung = zahlungen.findById(id);
 
-				
-                        
-@RequestParam(required = false) Long id) {
+		if (zahlung.isPresent()) {
 
-
-    ZahlungE zahlung = new ZahlungE();
-
-    if (id != null) {
-
-        Optional<ZahlungE> ZahlungE = zahlungen.findById(id);
-
-        if (ZahlungE.isPresent()) {
-
-            zahlung = ZahlungE.get();
-
-        }
-
-    }
-
-    model.addAttribute("zahlung", zahlung);
-
-
-    return "zahlung";
-
-}
+			return zahlung;
+					}
+		else { 
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+		}
+		
+	}
 }
